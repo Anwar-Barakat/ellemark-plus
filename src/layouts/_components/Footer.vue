@@ -1,5 +1,7 @@
 <template>
-  <v-footer :app="true" color="blue-darken-3" class="text-center d-flex flex-column">
+  <v-footer :app="true" color="blue-darken-3" class="text-center d-flex flex-column"
+    absolute
+  >
     <div>
       <v-btn
         v-for="icon in icons"

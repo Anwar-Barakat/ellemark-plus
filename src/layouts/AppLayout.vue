@@ -1,13 +1,11 @@
 <template>
   <div class="layout">
-    <v-layout>
-      <v-container>
-        <DrawerCard />
-        <AppBar />
-        <v-main>
-          <slot></slot>
-        </v-main>
-      </v-container>
+    <v-layout class="position-relative">
+      <DrawerCard />
+      <AppBar />
+      <v-main>
+        <slot></slot>
+      </v-main>
       <Footer />
     </v-layout>
   </div>
