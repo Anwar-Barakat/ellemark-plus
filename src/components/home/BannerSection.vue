@@ -25,13 +25,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
           </p>
-          <v-btn
-            color="blue-darken-2"
-            size="large"
-            :to="'/learn-more'"
-            variant="outlined"
-            rounded="xl"
-          >
+          <v-btn color="blue-darken-2" size="large" variant="outlined" rounded="xl">
             Learn More
           </v-btn>
         </div>
