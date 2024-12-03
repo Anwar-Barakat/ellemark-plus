@@ -1,8 +1,11 @@
-<script setup></script>
+<script setup>
+import AppLayout from "@/layouts/AppLayout.vue";
+</script>
 
 <template>
-  <v-btn>hello</v-btn>
-  <h1 className="text-3xl text-red-500 font-bold underline">Hello world!</h1>
+  <AppLayout>
+    <router-view />
+  </AppLayout>
 </template>
 
 <style scoped></style>

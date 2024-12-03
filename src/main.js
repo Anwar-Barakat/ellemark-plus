@@ -8,7 +8,11 @@ import { createPinia } from "pinia";
 // Vuetify
 import vuetify from '@/plugins/vuetify'
 
+import mitt from "mitt";
+const Emitter = mitt();
+
 createApp(App)
 .use(router)
+.provide("emitter", Emitter)
 .use(createPinia())
 .use(vuetify).mount("#app")
