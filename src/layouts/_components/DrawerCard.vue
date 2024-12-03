@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" elevation="4" location="left">
+  <v-navigation-drawer v-model="drawer" elevation="4" location="left" temporary>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis perspiciatis
       obcaecati odio consequuntur aliquid! Enim ab eum iusto laudantium quia!

@@ -1,11 +1,13 @@
 <template>
   <div class="layout">
     <v-layout>
-      <DrawerCard />
-      <AppBar  />
-      <v-main>
-        <slot></slot>
-      </v-main>
+      <v-container>
+        <DrawerCard />
+        <AppBar />
+        <v-main>
+          <slot></slot>
+        </v-main>
+      </v-container>
       <Footer />
     </v-layout>
   </div>
