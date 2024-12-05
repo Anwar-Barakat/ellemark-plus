@@ -31,9 +31,7 @@ const flashProductStore = useFlashProductStore();
 const { flashProducts, loading } = storeToRefs(flashProductStore);
 
 onMounted(() => {
-  flashProductStore.fetchFlashProducts().then(() => {
-    Swiper.update();
-  });
+  flashProductStore.fetchFlashProducts()
 });
 
 const modules = [Pagination, Navigation];
