@@ -16,7 +16,6 @@ const useNewProductStore = defineStore({
       try {
         const response = await axios.get("https://dummyjson.com/products");
         this.newProducts = response.data.products
-        console.log(this.newProducts);
       } catch (error) {
         this.error = error.message || "An error occurred";
         console.error(error);

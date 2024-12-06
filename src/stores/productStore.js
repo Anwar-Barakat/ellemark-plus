@@ -18,7 +18,6 @@ const useProductStore = defineStore({
       try {
         const response = await axios.get("https://dummyjson.com/products");
         this.flashProducts = response.data.products;
-        console.log("Flash Products:", this.flashProducts);
       } catch (error) {
         this.error = error.message || "An error occurred while fetching flash products";
         console.error(error);
@@ -34,7 +33,6 @@ const useProductStore = defineStore({
       try {
         const response = await axios.get("https://dummyjson.com/products/category/smartphones");
         this.mobileProducts = response.data.products;
-        console.log("Mobile Products:", this.mobileProducts);
       } catch (error) {
         this.error = error.message || "An error occurred while fetching mobile products";
         console.error(error);

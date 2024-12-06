@@ -48,7 +48,7 @@ const categoryStore = useCategoryStore();
 const { categories, loading, error } = storeToRefs(categoryStore);
 
 onMounted(() => {
-  categoryStore.fetchCategories();
+  categoryStore.fetchStaticCategories();
 });
 </script>
 

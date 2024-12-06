@@ -6,7 +6,11 @@ const routes = [
     name: "Home",
     component: () => import("../views/HomeView.vue"),
   },
-  // Add more routes here
+  {
+    path: "/products/category/:slug",
+    name: "products.category",
+    component: () => import("../views/ProductCategoryView.vue"),
+  }
 ];
 
 const router = createRouter({

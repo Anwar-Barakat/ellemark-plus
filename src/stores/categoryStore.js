@@ -1,13 +1,15 @@
+import axios from "axios";
 import { defineStore } from "pinia";
 
 export const useCategoryStore = defineStore("categoryStore", {
   state: () => ({
     categories: [],
+    products: [],
     loading: true,
     error: null,
   }),
   actions: {
-    async fetchCategories() {
+    async fetchStaticCategories() {
       this.loading = true; // Start loading
       try {
         // Static category data
@@ -93,6 +95,40 @@ export const useCategoryStore = defineStore("categoryStore", {
         this.error = "Failed to load categories.";
         console.error(err); // Log the error
         this.loading = false; // Stop loading on error
+      }
+    },
+    async fetchCategories() {
+      this.loading = true;
+      try {
+        // Fetch categories from the API
+        const response = await axios.get(
+          "https://dummyjson.com/products/categories"
+        );
+        this.categories = response.data.map((category, index) => ({
+          id: index + 1, // Generate a unique ID
+          name: category.name, // Capitalize the category
+          slug: category.slug,
+        }));
+        this.loading = false;
+      } catch (error) {
+        this.error = "Failed to load categories.";
+        console.error(error);
+        this.loading = false;
+      }
+    },
+    async fetchProductsByCategory(slug) {
+      this.loading = true;
+      try {
+        console.log(`https://dummyjson.com/products/category/${slug}`)
+        const response = await axios.get(
+          `https://dummyjson.com/products/category/${slug}`
+        );
+        this.products = response.data.products; // Store the products in the state
+        this.loading = false;
+      } catch (error) {
+        this.error = "Failed to load products.";
+        console.error(error);
+        this.loading = false;
       }
     },
   },
