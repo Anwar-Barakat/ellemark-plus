@@ -20,6 +20,8 @@
   <TopCategorySection />
   <NewProductSection />
   <QualityFeatureSection />
+
+  <FeaturedBandSection />
 </template>
 
 <script setup>
@@ -30,6 +32,7 @@ import NewProductSection from "../components/home/NewProductSection.vue";
 import QualityFeatureSection from "../components/home/QualityFeatureSection.vue";
 import TopCategorySection from "../components/home/TopCategorySection.vue";
 import TopOfferSection from "../components/home/TopOfferSection.vue";
+import FeaturedBandSection from "../components/home/FeaturedBandSection.vue";
 
 import useProductStore from "../stores/productStore";
 
