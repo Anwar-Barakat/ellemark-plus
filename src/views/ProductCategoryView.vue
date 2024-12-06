@@ -28,7 +28,7 @@
 <script setup>
 import { useCategoryStore } from "@/stores/categoryStore"; // Adjust the path if needed
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import ProductCard from "../components/ProductCard.vue"
 
@@ -39,14 +39,16 @@ const categorySlug = route.params.slug; // Extract the category slug from the UR
 // Use the category store
 const categoryStore = useCategoryStore();
 
+// Fetch products when component is mounted
 onMounted(() => {
   categoryStore.fetchProductsByCategory(categorySlug);
+});
+
+// Watch for changes in the category slug and refetch products
+watch(() => route.params.slug, (newSlug) => {
+  categoryStore.fetchProductsByCategory(newSlug);
 });
 
 const { products, loading, error } = storeToRefs(categoryStore);
 console.log(products);
 </script>
-
-<style lang="scss" scoped>
-/* Add your styles here */
-</style>
