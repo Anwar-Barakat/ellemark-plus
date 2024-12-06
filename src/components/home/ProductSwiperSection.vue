@@ -12,8 +12,8 @@
       :slides-per-view="4"
       class="py-16"
     >
-      <SwiperSlide v-for="flashProduct in flashProducts" :key="flashProduct.id">
-        <ProductCard :product="flashProduct" :loading="loading" />
+      <SwiperSlide v-for="product in products" :key="product.id">
+        <ProductCard :product="product" :loading="loading" />
       </SwiperSlide>
     </Swiper>
   </v-container>
@@ -27,7 +27,7 @@ import ProductCard from "../ProductCard.vue";
 const modules = [Pagination, Navigation];
 
 defineProps({
-  flashProducts: {
+  products: {
     type: Array,
     required: true,
   },
