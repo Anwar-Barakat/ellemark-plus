@@ -21,7 +21,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import useFlashProductStore from "../../stores/flashProduct";
+import useFlashProductStore from "../../stores/flashProductStore";
 import { storeToRefs } from "pinia";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper";
