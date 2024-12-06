@@ -20,19 +20,20 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-import useFlashProductStore from "../../stores/flashProductStore";
-import { storeToRefs } from "pinia";
+
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper";
 import ProductCard from "../ProductCard.vue";
-
-const flashProductStore = useFlashProductStore();
-const { flashProducts, loading } = storeToRefs(flashProductStore);
-
-onMounted(() => {
-  flashProductStore.fetchFlashProducts()
-});
-
 const modules = [Pagination, Navigation];
+
+defineProps({
+  flashProducts: {
+    type: Array,
+    required: true,
+  },
+  loading: {
+    type: Boolean,
+    required: true,
+  },
+})
 </script>

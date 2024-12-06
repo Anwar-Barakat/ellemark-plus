@@ -34,7 +34,7 @@ import useNewProductStore from "@/stores/newProductStore";
 
 const newProductStore = useNewProductStore();
 const { newProducts, loading } = storeToRefs(newProductStore);
-
+const modules = [Pagination, Navigation];
 onMounted(() => {
   newProductStore.fetchNewProducts();
 });
