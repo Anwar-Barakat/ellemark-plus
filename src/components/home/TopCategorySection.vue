@@ -18,13 +18,21 @@
         lg="2"
         class="text-center"
       >
-        <v-img
-          :src="category.image"
-          class="mx-auto mb-2"
-          max-width="80px"
-          height="80px"
-          rounded
-        ></v-img>
+        <v-hover v-slot="{ isHovering, props }">
+          <v-img
+            :src="category.image"
+            :class="[
+              'mx-auto mb-2',
+              isHovering
+                ? 'transform scale-110 shadow-lg'
+                : 'transform scale-100',
+            ]"
+            max-width="80px"
+            height="80px"
+            rounded
+            v-bind="props"
+          ></v-img>
+        </v-hover>
         <div class="text-center text-black">{{ category.name }}</div>
       </v-col>
     </v-row>
